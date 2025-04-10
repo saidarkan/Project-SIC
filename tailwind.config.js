@@ -14,6 +14,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                almendra_sc: ["Almendra_SC", "serif"],
             },
             backgroundImage: {
                 "gradient-radial":
