@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 
 // Componen utama untuk halaman Home
+import GuestLayout from "@/Layouts/GuestLayout";
 import HeroSection from "@/Components/Home/HeroSection";
 import ScrollButtons from "@/Components/Home/ScrollButtons";
 import AboutSection from "@/Components/Home/AboutSection";
@@ -22,15 +23,18 @@ const Home = () => {
 
     return (
         <>
-            <HeroSection />
-            <ScrollButtons onTop={scrollToTop} onBottom={scrollToBottom} />
-            <AboutSection ref={bottomRef} />
+            <GuestLayout>
+                <div className="-mt-24">
+                    <HeroSection />
+                    <ScrollButtons
+                        onTop={scrollToTop}
+                        onBottom={scrollToBottom}
+                    />
+                    <AboutSection ref={bottomRef} />
+                </div>
+            </GuestLayout>
         </>
     );
 };
 
 export default Home;
-
-
-
-
