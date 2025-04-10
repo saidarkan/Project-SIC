@@ -16,3 +16,4 @@ const AboutSection = React.forwardRef((props, ref) => {
         </section>
     );
 });
+export default AboutSection;
