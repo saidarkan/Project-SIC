@@ -1,0 +1,32 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faArrowUp,
+  faArrowDown,
+
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebookF,
+  faInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+/**
+ * Komponen Ikon Universal
+ * @param {string} name - Nama ikon (contoh: "home", "user", "coffee")
+ * @param {string} className - Tambahan class untuk styling
+ */
+const Icon = ({ name, className }) => {
+  // Daftar ikon yang didukung
+  const icons = {
+
+    home: faHome,
+    arrowUp: faArrowUp,
+    arrowDown: faArrowDown,
+
+
+  };
+
+  return <FontAwesomeIcon icon={icons[name]} className={className} />;
+};
+
+export default Icon;
