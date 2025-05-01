@@ -3,7 +3,17 @@ import {
   faHome,
   faArrowUp,
   faArrowDown,
-
+  faChevronLeft,
+  faChevronRight,
+  faRightToBracket,
+  faReceipt,
+  faLanguage,
+  faMagnifyingGlass,
+  faFilter,
+  faList,
+  faTableCellsLarge,
+  faLocationDot,
+  faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
@@ -22,7 +32,20 @@ const Icon = ({ name, className }) => {
     home: faHome,
     arrowUp: faArrowUp,
     arrowDown: faArrowDown,
-
+    facebook: faFacebookF,
+    instagram: faInstagram,
+    youtube: faYoutube,
+    login: faRightToBracket,
+    language: faLanguage,
+    promo: faReceipt,
+    list: faList,
+    close: faCircleXmark,
+    card: faTableCellsLarge,
+    location: faLocationDot,
+    search: faMagnifyingGlass,
+    filter: faFilter,
+    arrowLeft: faChevronLeft,
+    arrowRight: faChevronRight,
 
   };
 
