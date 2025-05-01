@@ -16,7 +16,7 @@ const AboutSection = React.forwardRef((props, ref) => {
     return (
         <section
             ref={ref}
-            className="min-h-screen flex items-center justify-center relative overflow-hidden"
+            className="min-h-screen bg-gradient-to-b from-lime-900 via-lime-800 to-lime-700 flex items-center justify-center relative overflow-hidden"
         >
             <motion.img
                 src="/build/images/forest.png"
