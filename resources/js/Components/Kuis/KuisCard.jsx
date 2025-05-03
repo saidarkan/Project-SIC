@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Head } from "@inertiajs/react";
 
-const QuizPage = () => {
+const KuisCard = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
     const [timeLeft, setTimeLeft] = useState(10);
@@ -55,62 +56,65 @@ const QuizPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-200 to-green-500 flex items-center justify-center">
-            <div className="max-w-2xl w-full bg-white p-6 rounded-xl shadow-lg relative">
-                {/* Progress */}
-                <div className="flex justify-center mb-4 space-x-2">
-                    {[...Array(questions.length)].map((_, index) => (
-                        <div
-                            key={index}
-                            className={`w-8 h-8 flex items-center justify-center rounded-full ${
-                                index <= currentIndex ? "bg-orange-500 text-white" : "bg-gray-200"
-                            }`}
-                        >
-                            {index + 1}
-                        </div>
-                    ))}
-                </div>
+        <>
+            <Head title="Kuis Interaktif" />
+            <section className="min-h-screen bg-gradient-to-br from-green-200 to-green-500 flex items-center justify-center">
+                <div className="max-w-2xl w-full bg-white p-6 rounded-xl shadow-lg">
+                    {/* Progress */}
+                    <div className="flex justify-center mb-4 space-x-2">
+                        {[...Array(questions.length)].map((_, index) => (
+                            <div
+                                key={index}
+                                className={`w-8 h-8 flex items-center justify-center rounded-full ${
+                                    index <= currentIndex ? "bg-orange-500 text-white" : "bg-gray-200"
+                                }`}
+                            >
+                                {index + 1}
+                            </div>
+                        ))}
+                    </div>
 
-                {/* Timer */}
-                <div className="text-center text-orange-600 font-bold text-xl mb-4">{`00:${timeLeft
-                    .toString()
-                    .padStart(2, "0")}`}</div>
+                    {/* Timer */}
+                    <div className="text-center text-orange-600 font-bold text-xl mb-4">
+                        {`00:${timeLeft.toString().padStart(2, "0")}`}
+                    </div>
 
-                {/* Question */}
-                <h2 className="text-xl font-bold text-center mb-6">{current.pertanyaan}</h2>
+                    {/* Question */}
+                    <h2 className="text-xl font-bold text-center mb-6">{current.pertanyaan}</h2>
 
-                {/* Answer Options */}
-                <div className="space-y-4">
-                    {options.map((option) => (
+                    {/* Answer Options */}
+                    <div className="space-y-4">
+                        {options.map((option) => (
+                            <button
+                                key={option.key}
+                                onClick={() => handleAnswer(option.key)}
+                                disabled={selectedOption !== null}
+                                className={`w-full px-4 py-2 rounded-lg border text-left ${
+                                    selectedOption === option.key
+                                        ? option.key === current.jawaban_benar
+                                            ? "bg-green-500 text-white border-green-600"
+                                            : "bg-red-500 text-white border-red-600"
+                                        : "bg-white hover:bg-gray-100"
+                                }`}
+                            >
+                                {option.text}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Next Button */}
+                    <div className="flex justify-end mt-6">
                         <button
-                            key={option.key}
-                            onClick={() => handleAnswer(option.key)}
-                            disabled={selectedOption !== null}
-                            className={`w-full px-4 py-2 rounded-lg border text-left ${
-                                selectedOption === option.key
-                                    ? option.key === current.jawaban_benar
-                                        ? "bg-green-500 text-white border-green-600"
-                                        : "bg-red-500 text-white border-red-600"
-                                    : "bg-white hover:bg-gray-100"
-                            }`}
+                            onClick={handleNext}
+                            className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600"
                         >
-                            {option.text}
+                            NEXT QUESTION →
                         </button>
-                    ))}
+                    </div>
                 </div>
-
-                {/* Next Button */}
-                <div className="flex justify-end mt-6">
-                    <button
-                        onClick={handleNext}
-                        className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600"
-                    >
-                        NEXT QUESTION →
-                    </button>
-                </div>
-            </div>
-        </div>
+            </section>
+        </>
     );
 };
 
-export default QuizPage;
+export default KuisCard;
