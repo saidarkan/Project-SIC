@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('opsi_c');
             $table->string('opsi_d');
             $table->string('jawaban');
+
+            $table->foreign('id_komik')->references('id_komik')->on('komiks')->onDelete('cascade');
         });
     }
 
