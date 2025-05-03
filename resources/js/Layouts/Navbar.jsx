@@ -1,52 +1,130 @@
-import React, { useState } from "react";
-import { Link } from "@inertiajs/react";
+import React from "react";
+import { Link, usePage } from "@inertiajs/react";
 import { route } from "ziggy-js";
 
 const Navbar = () => {
+    const { url } = usePage();
+    const currentRoute = url;
+
+    const navbarBg = currentRoute.startsWith("/komik")
+        ? "bg-white"
+        : currentRoute.startsWith("/produk")
+        ? "bg-white"
+        : currentRoute === "/"
+        ? "bg-transparent" // Warna background untuk beranda (root)
+        : "bg-slate-900"; // Default background
+
+    const activeTextClass = "text-lime-600 border-b-2 border-lime-600";
+    const normalTextClass =
+        currentRoute.startsWith("/komik") || currentRoute.startsWith("/produk")
+            ? "text-black hover:text-lime-600  text-slate-850 font-extrabold transition-all ease-in-out lg:px-2 before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-lime-600 before:transition-all before:duration-800 before:transform before:-translate-x-1/2 hover:text-lime-200 hover:before:w-full "
+            : "text-white hover:text-lime-200  text-slate-850 font-extrabold transition-all ease-in-out lg:px-2 before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-lime-600 before:transition-all before:duration-800 before:transform before:-translate-x-1/2 hover:text-lime-200 hover:before:w-full";
+
+    const logoSrc =
+        currentRoute === "/"
+            ? "/build/images/logo/SIC Logo Vertical - White.png"
+            : "/build/images/logo/SIC Logo Vertical - Color.png";
+
+    const handleLanguageChange = (e) => {
+        const selectedLang = e.target.value;
+        window.location.href = route("change.language", selectedLang);
+    };
+
     return (
-        <>
-            <nav className=" z-50 w-full  p-2 text-white">
-                <div className="container mx-auto flex items-center justify-between p-3">
-                    {/* <button
-                        className="md:hidden"
-                        onClick={() => setIsOpen(!isOpen)}
-                    >
-                        {isOpen ? <X size={28} /> : <Menu size={28} />}
-                    </button> */}
-                    <img
-                        src="/build/images/logo/SIC Logo Vertical - White.png"
-                        alt="logo web"
-                        className="w-20"
-                    />
-                    <ul className="hidden space-x-6 text-2xl font-medium md:flex">
+        <nav
+            className={`z-50 w-full py-3 px-4 ${navbarBg} transition-all duration-300`}
+        >
+            <div className="container mx-auto flex items-center justify-between">
+                <img src={logoSrc} alt="logo web" className="w-14 md:w-16" />
+
+                <div className="flex items-center space-x-6">
+                    <ul className="hidden md:flex space-x-6 text-lg font-semibold">
                         <li>
-                            <a
+                            <Link
                                 href={route("home")}
-                                className="font-medium  hover:text-lime-200 transition-all duration-200"
+                                className={`relative flex items-center ${
+                                    currentRoute === "/"
+                                        ? activeTextClass
+                                        : normalTextClass
+                                }`}
                             >
                                 Beranda
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <Link
                                 href={route("komik.index")}
-                                className="font-medium  hover:text-lime-200 transition-all duration-200"
+                                className={`relative flex items-center ${
+                                    currentRoute.startsWith("/komik")
+                                        ? activeTextClass
+                                        : normalTextClass
+                                }`}
                             >
-                                Komik Gambi
+                                Komik Edukatif
                             </Link>
                         </li>
                         <li>
                             <Link
-                                href=""
-                                className="font-medium  hover:text-lime-200 transition-all duration-200"
+                                href={route("produk.index")}
+                                className={`relative flex items-center  ${
+                                    currentRoute.startsWith("/produk")
+                                        ? activeTextClass
+                                        : normalTextClass
+                                }`}
                             >
-                                Prouduk Gambut
+                                Produk Gambut
                             </Link>
                         </li>
                     </ul>
                 </div>
-            </nav>
-        </>
+
+                {/* Login + Language Switcher */}
+                <div className="flex items-center space-x-4">
+                    {/* Language Switcher */}
+                    <div className="flex border border-lime-700 rounded-md overflow-hidden">
+                        <button
+                            onClick={() =>
+                                (window.location.href = route(
+                                    "change.language",
+                                    "id"
+                                ))
+                            }
+                            className={`px-4 py-1 text-sm font-semibold transition-colors duration-300 ${
+                                route().params.language === "id" ||
+                                !route().params.language
+                                    ? "bg-lime-600 text-white"
+                                    : "bg-white text-lime-600"
+                            }`}
+                        >
+                            ID
+                        </button>
+                        <button
+                            onClick={() =>
+                                (window.location.href = route(
+                                    "change.language",
+                                    "en"
+                                ))
+                            }
+                            className={`px-4 py-1 text-sm font-semibold transition-colors duration-300 ${
+                                route().params.language === "en"
+                                    ? "bg-lime-600 text-white"
+                                    : "bg-white text-lime-600"
+                            }`}
+                        >
+                            EN
+                        </button>
+                    </div>
+
+                    {/* Tombol Login yang Lebih Menarik */}
+                    {/* <Link
+                        href={route("login")}
+                        className="bg-gradient-to-r from-lime-500 to-lime-600 hover:from-lime-600 hover:to-lime-700 text-white px-4 py-2 rounded-xl text-sm md:text-base font-semibold shadow-lg transform hover:scale-105 transition-all duration-300"
+                    >
+                        Login
+                    </Link> */}
+                </div>
+            </div>
+        </nav>
     );
 };
 
