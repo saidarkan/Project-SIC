@@ -24,7 +24,7 @@ const Home = () => {
     return (
         <>
             <GuestLayout>
-                <div className="-mt-[8.5rem]">
+                <div className="-mt-[8rem]">
                     <HeroSection />
                     <ScrollButtons
                         onTop={scrollToTop}
