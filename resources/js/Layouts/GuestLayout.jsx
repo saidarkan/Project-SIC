@@ -12,14 +12,10 @@ export default function GuestLayout({ children }) {
                 <Footer />
             </div> */}
 
-            <div className=" min-h-screen flex">
-                <div className="flex flex-col flex-1">
-                    <Navbar />
-                    <div className="flex-1">
-                        {children}
-                    </div>
-                    <Footer />
-                </div>
+            <div className="min-h-screen flex flex-col">
+                <Navbar />
+                <main className="flex-1">{children}</main>
+                <Footer />
             </div>
         </>
     );
