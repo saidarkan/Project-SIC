@@ -29,7 +29,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link
-                                href={route("komik")}
+                                href={route("komik.index")}
                                 className="font-medium  hover:text-lime-200 transition-all duration-200"
                             >
                                 Komik Gambi
