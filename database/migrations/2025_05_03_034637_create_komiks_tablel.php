@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id('id_komik');
             $table->string('judul');
             $table->text('deskripsi');
-            $table->string('thumbnail')->nullable(); // untuk path gambar
+            $table->text('thumbnail')->nullable(); // untuk path gambar thumbnail
+            $table->text('gambar')->nullable();     // untuk gambar komik lainnya
+            $table->string('pengarang');
             $table->timestamps();
         });
     }

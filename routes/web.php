@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -31,5 +32,20 @@ Route::get('/komik', function () {
 Route::get('/kuis', function () {
     return Inertia::render('Kuis/Index');
 })->name('kuis');
+
+use App\Http\Controllers\KomikAdminController;
+
+Route::resource('komik-admin', KomikAdminController::class);
+
+
+Route::delete('/komik-admin/{id_komik}', [KomikController::class, 'destroy'])->name('komik-admin.destroy');
+
+
+
+Route::resource('artikel-admin', ArtikelController::class);
+
+// Route tambahan untuk destroy dengan parameter `id_artikel`
+Route::delete('/artikel-admin/{id_artikel}', [ArtikelController::class, 'destroy'])->name('artikel-admin.destroy');
+
 
 require __DIR__.'/auth.php';

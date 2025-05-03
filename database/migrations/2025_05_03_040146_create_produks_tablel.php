@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_produk');
             $table->string('nama');
             $table->text('deskripsi');
-            $table->string('gambar')->nullable(); // menyimpan nama file atau URL gambar
+            $table->text('gambar')->nullable(); // menyimpan nama file atau URL gambar
             $table->string('kategori');
             $table->decimal('harga', 10, 2); // bisa menampung harga hingga miliaran
             $table->string('linkproduk')->nullable(); // bisa untuk link ke marketplace
