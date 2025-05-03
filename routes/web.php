@@ -37,4 +37,8 @@ Route::resource('/komik', KomikController::class)->only(['index', 'create', 'sto
 
 
 
+Route::get('/kuis', function () {
+    return Inertia::render('Kuis/Index');
+})->name('kuis');
+
 require __DIR__.'/auth.php';
