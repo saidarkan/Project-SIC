@@ -7,9 +7,9 @@ const Footer = () => {
                 {/* Logo dan Tentang Gambi */}
                 <div className="flex flex-col items-center md:items-start">
                     <img
-                        src="/image/gambi_logo.png"
+                        src="/build/images/logo/SIC Logo Vertical - Color.png"
                         alt="Gambi Logo"
-                        className="h-16 w-auto mb-4"
+                        className="h-full w-20 mb-4"
                     />
                     <p className="text-sm text-lime-100">
                         Hai! Aku <span className="font-semibold">Gambi</span>,
