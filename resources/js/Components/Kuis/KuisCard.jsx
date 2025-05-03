@@ -1,119 +1,60 @@
-import React, { useState, useEffect } from "react";
-import { Head } from "@inertiajs/react";
+import { Link, router } from "@inertiajs/react";
+import React from "react";
 
-const KuisCard = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [selectedOption, setSelectedOption] = useState(null);
-    const [timeLeft, setTimeLeft] = useState(10);
-
-    const questions = [
-        {
-            pertanyaan: "Apa itu tanah gambut?",
-            opsi_a: "Tanah organik yang terbentuk dari sisa tanaman",
-            opsi_b: "Tanah pasir",
-            opsi_c: "Tanah liat",
-            opsi_d: "Tanah keras",
-            jawaban_benar: "a",
-        },
-        {
-            pertanyaan: "Apa fungsi utama hutan mangrove?",
-            opsi_a: "Tempat wisata",
-            opsi_b: "Membakar sampah",
-            opsi_c: "Menanam padi",
-            opsi_d: "Mencegah abrasi",
-            jawaban_benar: "d",
-        },
-    ];
-
-    const current = questions[currentIndex];
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
-        }, 1000);
-        return () => clearInterval(timer);
-    }, [currentIndex]);
-
-    const handleAnswer = (option) => {
-        setSelectedOption(option);
-    };
-
-    const handleNext = () => {
-        if (currentIndex < questions.length - 1) {
-            setCurrentIndex(currentIndex + 1);
-            setSelectedOption(null);
-            setTimeLeft(10);
-        } else {
-            alert("Kuis selesai!");
+const KuisCard = ({ kuis = [] }) => {
+    const handleDelete = (id_kuis) => {
+        if (confirm('Yakin ingin menghapus kuis ini?')) {
+            router.delete(route('kuis.destroy', id_kuis));
         }
     };
 
-    const options = [
-        { key: "a", text: current.opsi_a },
-        { key: "b", text: current.opsi_b },
-        { key: "c", text: current.opsi_c },
-        { key: "d", text: current.opsi_d },
-    ];
-
     return (
-        <>
-            <Head title="Kuis Interaktif" />
-            <section className="min-h-screen bg-gradient-to-br from-green-200 to-green-500 flex items-center justify-center">
-                <div className="max-w-2xl w-full bg-white p-6 rounded-xl shadow-lg">
-                    {/* Progress */}
-                    <div className="flex justify-center mb-4 space-x-2">
-                        {[...Array(questions.length)].map((_, index) => (
-                            <div
-                                key={index}
-                                className={`w-8 h-8 flex items-center justify-center rounded-full ${
-                                    index <= currentIndex ? "bg-orange-500 text-white" : "bg-gray-200"
-                                }`}
-                            >
-                                {index + 1}
+        <div className="p-4">
+            <h1 className="text-2xl font-bold mb-4">Daftar Kuis</h1>
+            <Link
+                className="inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+                href={route('kuis.create')}
+            >
+                Tambah Kuis
+            </Link>
+
+            {kuis.length === 0 ? (
+                <p className="mt-4">Tidak ada kuis.</p>
+            ) : (
+                <ul className="space-y-2 mt-4">
+                    {kuis.map((item) => (
+                        <li key={item.id_kuis} className="border p-4 rounded-md shadow">
+                            <p className="font-semibold">{item.pertanyaan}</p>
+                            <ul className="list-disc pl-5 mt-2">
+                                <li>A. {item.opsi_a}</li>
+                                <li>B. {item.opsi_b}</li>
+                                <li>C. {item.opsi_c}</li>
+                                <li>D. {item.opsi_d}</li>
+                            </ul>
+                            <p className="mt-2 text-sm text-green-600">
+                                Jawaban: {item.jawaban.toUpperCase()}
+                            </p>
+
+                            <div className="flex space-x-2 mt-4">
+                                <Link
+                                    href={route('kuis.edit', item.id_kuis)}
+                                    className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600"
+                                >
+                                    Edit
+                                </Link>
+
+                                <button
+                                    onClick={() => handleDelete(item.id_kuis)}
+                                    className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                                >
+                                    Hapus
+                                </button>
                             </div>
-                        ))}
-                    </div>
-
-                    {/* Timer */}
-                    <div className="text-center text-orange-600 font-bold text-xl mb-4">
-                        {`00:${timeLeft.toString().padStart(2, "0")}`}
-                    </div>
-
-                    {/* Question */}
-                    <h2 className="text-xl font-bold text-center mb-6">{current.pertanyaan}</h2>
-
-                    {/* Answer Options */}
-                    <div className="space-y-4">
-                        {options.map((option) => (
-                            <button
-                                key={option.key}
-                                onClick={() => handleAnswer(option.key)}
-                                disabled={selectedOption !== null}
-                                className={`w-full px-4 py-2 rounded-lg border text-left ${
-                                    selectedOption === option.key
-                                        ? option.key === current.jawaban_benar
-                                            ? "bg-green-500 text-white border-green-600"
-                                            : "bg-red-500 text-white border-red-600"
-                                        : "bg-white hover:bg-gray-100"
-                                }`}
-                            >
-                                {option.text}
-                            </button>
-                        ))}
-                    </div>
-
-                    {/* Next Button */}
-                    <div className="flex justify-end mt-6">
-                        <button
-                            onClick={handleNext}
-                            className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600"
-                        >
-                            NEXT QUESTION →
-                        </button>
-                    </div>
-                </div>
-            </section>
-        </>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
     );
 };
 
