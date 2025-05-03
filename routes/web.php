@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\KomikController;
+use App\Http\Controllers\ProdukController;
+use App\Models\Komik;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -24,8 +27,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/komik', function () {
-    return Inertia::render('Komik/Index');
-})->name('komik');
+// Route::get('/komik', function () {
+//     return Inertia::render('Komik/Index');
+// })->name('komik');
+
+Route::resource('/komik', KomikController::class)->only(['index', 'create', 'store', 'edit', 'destroy', 'update']);
+Route::resource('/komik', KomikController::class)->only(['index', 'create', 'store', 'edit', 'destroy', 'update']);
+
+
+
 
 require __DIR__.'/auth.php';
