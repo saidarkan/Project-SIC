@@ -32,7 +32,8 @@ Route::middleware('auth')->group(function () {
 // })->name('komik');
 
 Route::resource('/komik', KomikController::class)->only(['index', 'create', 'store', 'edit', 'destroy', 'update']);
-Route::resource('/komik', KomikController::class)->only(['index', 'create', 'store', 'edit', 'destroy', 'update']);
+
+Route::resource('/produk', ProdukController::class)->only(['index', 'create', 'store', 'edit', 'destroy', 'update']);
 
 
 
