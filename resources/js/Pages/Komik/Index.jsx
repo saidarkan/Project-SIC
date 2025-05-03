@@ -25,7 +25,7 @@ const Index = () => {
 
                 <ScrollButtons onTop={scrollToTop} onBottom={scrollToBottom} />
             </div>
-            <KomikCard   ref={bottomRef} />
+            <KomikCard ref={bottomRef} />
         </GuestLayout>
     );
 };
