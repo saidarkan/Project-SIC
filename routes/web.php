@@ -28,4 +28,8 @@ Route::get('/komik', function () {
     return Inertia::render('Komik/Index');
 })->name('komik');
 
+Route::get('/kuis', function () {
+    return Inertia::render('Kuis/Index');
+})->name('kuis');
+
 require __DIR__.'/auth.php';
