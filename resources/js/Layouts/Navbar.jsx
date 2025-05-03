@@ -5,8 +5,8 @@ import { route } from "ziggy-js";
 const Navbar = () => {
     return (
         <>
-            <nav className="sticky top-0 z-50 w-full  p-2 text-white drop-shadow-md backdrop-blur-sm">
-                <div className="container mx-auto flex items-center justify-between p-0">
+            <nav className=" z-50 w-full  p-2 text-white">
+                <div className="container mx-auto flex items-center justify-between p-3">
                     {/* <button
                         className="md:hidden"
                         onClick={() => setIsOpen(!isOpen)}
@@ -14,7 +14,7 @@ const Navbar = () => {
                         {isOpen ? <X size={28} /> : <Menu size={28} />}
                     </button> */}
                     <img
-                        src="/build/images/logo/gaty-logo.png"
+                        src="/build/images/logo/SIC Logo Vertical - White.png"
                         alt="logo web"
                         className="w-20"
                     />
@@ -22,7 +22,7 @@ const Navbar = () => {
                         <li>
                             <a
                                 href={route("home")}
-                                className="font-medium font-almendra_sc hover:text-lime-200 transition-all duration-200"
+                                className="font-medium  hover:text-lime-200 transition-all duration-200"
                             >
                                 Beranda
                             </a>
@@ -30,7 +30,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href={route("komik")}
-                                className="font-medium font-almendra_sc hover:text-lime-200 transition-all duration-200"
+                                className="font-medium  hover:text-lime-200 transition-all duration-200"
                             >
                                 Komik Gambi
                             </Link>
@@ -38,7 +38,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href=""
-                                className="font-medium font-almendra_sc hover:text-lime-200 transition-all duration-200"
+                                className="font-medium  hover:text-lime-200 transition-all duration-200"
                             >
                                 Prouduk Gambut
                             </Link>
