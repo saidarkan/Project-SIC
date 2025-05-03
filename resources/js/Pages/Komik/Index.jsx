@@ -20,7 +20,7 @@ const Index = () => {
 
     return (
         <GuestLayout>
-            <div className="-mt-24">
+            <div className="-mt-[8.5rem]">
                 <HeroSection />
 
                 <ScrollButtons onTop={scrollToTop} onBottom={scrollToBottom} />
