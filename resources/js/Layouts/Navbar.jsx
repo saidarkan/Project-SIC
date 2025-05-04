@@ -12,7 +12,7 @@ const Navbar = () => {
         ? "bg-white"
         : currentRoute === "/"
         ? "bg-transparent" // Warna background untuk beranda (root)
-        : "bg-slate-900"; // Default background
+        : "bg-trasparent"; // Default background
 
     const activeTextClass = "text-lime-600 border-b-2 border-lime-600";
     const normalTextClass =
@@ -80,8 +80,8 @@ const Navbar = () => {
 
                 {/* Login + Language Switcher */}
                 <div className="flex items-center space-x-4">
-                    {/* Language Switcher */}
-                    <div className="flex border border-lime-700 rounded-md overflow-hidden">
+
+                    {/* <div className="flex border border-lime-700 rounded-md overflow-hidden">
                         <button
                             onClick={() =>
                                 (window.location.href = route(
@@ -113,15 +113,15 @@ const Navbar = () => {
                         >
                             EN
                         </button>
-                    </div>
+                    </div> */}
 
                     {/* Tombol Login yang Lebih Menarik */}
-                    {/* <Link
+                    <Link
                         href={route("login")}
                         className="bg-gradient-to-r from-lime-500 to-lime-600 hover:from-lime-600 hover:to-lime-700 text-white px-4 py-2 rounded-xl text-sm md:text-base font-semibold shadow-lg transform hover:scale-105 transition-all duration-300"
                     >
                         Login
-                    </Link> */}
+                    </Link>
                 </div>
             </div>
         </nav>
