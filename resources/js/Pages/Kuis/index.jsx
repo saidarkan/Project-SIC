@@ -1,17 +1,17 @@
 import KuisCard from "@/Components/Kuis/KuisCard";
-import React, { useRef } from "react";
-import GuestLayout from "@/Layouts/GuestLayout";
+import React from "react";
+// import GuestLayout from "@/Layouts/GuestLayout";
+// import AdminLayout from "@/Layouts/AdminLayout";
 
-
-const Index = () => {
-
+const Index = ({ kuis }) => {
     return (
-        <GuestLayout>
-            <div className="-mt-[8.5rem]">
 
+
+            <div className="">
+                <KuisCard kuis={kuis} />
             </div>
-            <KuisCard    />
-        </GuestLayout>
+
+
     );
 };
 
