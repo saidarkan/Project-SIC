@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Head } from '@inertiajs/react';
 import GuestLayout from "@/Layouts/GuestLayout";
 import ScrollButtons from "@/Components/Home/ScrollButtons";
 import Carousel from "@/Components/Produk/Carousel";
@@ -18,6 +19,7 @@ const Index = () => {
     return (
         <GuestLayout>
             <div className="mt-0">
+            <Head title="Produk Gambut" />
                 <Carousel />
                 <ScrollButtons onTop={scrollToTop} onBottom={scrollToBottom} />
 

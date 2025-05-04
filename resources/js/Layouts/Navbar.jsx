@@ -11,12 +11,12 @@ const Navbar = () => {
         : currentRoute.startsWith("/produk")
         ? "bg-white"
         : currentRoute === "/"
-        ? "bg-transparent" // Warna background untuk beranda (root)
+        ? "bg-transparent"
         : "bg-trasparent"; // Default background
 
     const activeTextClass = "text-lime-600 border-b-2 border-lime-600";
     const normalTextClass =
-        currentRoute.startsWith("/komik") || currentRoute.startsWith("/produk")
+        currentRoute.startsWith("/komik") || currentRoute.startsWith("/produk") || currentRoute.startsWith("/login")
             ? "text-black hover:text-lime-600  text-slate-850 font-extrabold transition-all ease-in-out lg:px-2 before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-lime-600 before:transition-all before:duration-800 before:transform before:-translate-x-1/2 hover:text-lime-200 hover:before:w-full "
             : "text-white hover:text-lime-200  text-slate-850 font-extrabold transition-all ease-in-out lg:px-2 before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-lime-600 before:transition-all before:duration-800 before:transform before:-translate-x-1/2 hover:text-lime-200 hover:before:w-full";
 

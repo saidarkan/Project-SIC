@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Head} from "@inertiajs/react";
 import GuestLayout from "@/Layouts/GuestLayout";
 import HeroSection from "@/Components/Komik/HeroSection";
 import ScrollButtons from "@/Components/Home/ScrollButtons";
@@ -20,6 +21,7 @@ const Index = () => {
 
     return (
         <GuestLayout>
+            <Head title="Komik Edukatif" />
             <div className="-mt-[8.5rem]">
                 <HeroSection />
 

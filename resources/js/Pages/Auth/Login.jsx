@@ -26,7 +26,7 @@ export default function Login({ status, canResetPassword }) {
         <GuestLayout>
             <Head title="Log in" />
 
-            <div className="min-h-screen flex items-center justify-center bg-slate-200 px-6">
+            <div className="min-h-screen flex items-center justify-center bg-slate-50 px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

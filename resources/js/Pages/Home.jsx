@@ -1,6 +1,6 @@
 // Importing React and useRef from React library
 import React, { useRef } from "react";
-
+import { Head} from "@inertiajs/react";
 // Componen utama untuk halaman Home
 import GuestLayout from "@/Layouts/GuestLayout";
 import HeroSection from "@/Components/Home/HeroSection";
@@ -24,6 +24,7 @@ const Home = () => {
     return (
         <>
             <GuestLayout>
+                  <Head title="Beranda" />
                 <div className="-mt-[8rem]">
                     <HeroSection />
                     <ScrollButtons
