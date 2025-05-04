@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Head, Link } from "@inertiajs/react";
+import { Link } from "@inertiajs/react";
 import { BookOpen, Filter } from "lucide-react";
 
 const KomikCard = React.forwardRef((props, ref) => {
@@ -54,7 +54,7 @@ const KomikCard = React.forwardRef((props, ref) => {
 
     return (
         <>
-            <Head title="Komik Edukatif" />
+
             <section
                 ref={ref}
                 className="bg-gradient-to-br from-green-100 to-white min-h-screen py-10"
