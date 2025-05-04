@@ -9,7 +9,7 @@ const ProdukCard = () => {
       id_produk: 1,
       nama: 'Kapsul Albumin Ikan Gabus',
       deskripsi: 'Suplemen kesehatan alami dari ekstrak ikan gabus asli lahan gambut.',
-      gambar: 'https://example.com/kapsul-albumin.jpg',
+      gambar: 'https://down-id.img.susercontent.com/file/id-11134207-7r992-lqmtj4t6rm8g90_tn.webp',
       kategori: 'Kapsul Albumin',
       harga: 65000.0,
       lokasi: 'Kab. Siak, Riau',
