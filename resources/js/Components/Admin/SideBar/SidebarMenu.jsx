@@ -9,10 +9,15 @@ export default function SidebarMenu() {
             label: "Dashboard",
             routeName: "dashboard",
         },
+          {
+            label: "Komik",
+            routeName: "komik.admin",
+        },
         {
             label: "Produk",
             routeName: "produk.admin",
         },
+
     ];
 
     return (

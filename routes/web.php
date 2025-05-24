@@ -53,6 +53,8 @@ Route::get('/dashboard', function () {
 Route::prefix('admin')->group(function () {
     // =Produk route=
     Route::get('/produk', [ProdukController::class, 'produkAdmin'])->name('produk.admin');
+    // =Komik route=
+      Route::get('/komik', [KomikController::class, 'KomikAdmin'])->name('komik.admin');
 });
 
 
