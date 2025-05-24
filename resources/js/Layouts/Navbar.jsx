@@ -53,7 +53,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link
-                                href={route("komik.index")}
+                                href={route("komik.guest")}
                                 className={`relative flex items-center ${
                                     currentRoute.startsWith("/komik")
                                         ? activeTextClass
