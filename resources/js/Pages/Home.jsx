@@ -3,11 +3,11 @@ import React, { useRef } from "react";
 import { Head } from "@inertiajs/react";
 // Componen utama untuk halaman Home
 import GuestLayout from "@/Layouts/GuestLayout";
-import HeroSection from "@/Components/Home/HeroSection";
-import ScrollButtons from "@/Components/Home/ScrollButtons";
-import AboutSection from "@/Components/Home/AboutSection";
-import PeatFunctionsSection from "@/Components/Home/PeatFunctionsSection";
-import PeatJourneySection from "@/Components/Home/PeatJourneySection";
+import HeroSection from "@/Components/Guest/Home/HeroSection";
+import ScrollButtons from "@/Components/Guest/Home/ScrollButtons";
+import AboutSection from "@/Components/Guest/Home/AboutSection";
+import PeatFunctionsSection from "@/Components/Guest/Home/PeatFunctionsSection";
+import PeatJourneySection from "@/Components/Guest/Home/PeatJourneySection";
 const Home = () => {
     const bottomRef = useRef(null);
     const peatJourneyRef = useRef(null); // khusus untuk PeatJourneySection
@@ -25,10 +25,7 @@ const Home = () => {
             <Head title="Beranda" />
             <div className="-mt-[8rem]">
                 <HeroSection />
-                <ScrollButtons
-                    onTop={scrollToTop}
-                    onBottom={scrollToBottom}
-                />
+                <ScrollButtons onTop={scrollToTop} onBottom={scrollToBottom} />
 
                 <AboutSection />
 
@@ -40,6 +37,5 @@ const Home = () => {
         </GuestLayout>
     );
 };
-
 
 export default Home;

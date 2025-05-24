@@ -12,7 +12,7 @@ class KuisController extends Controller
     public function index()
 {
     $kuis = Kuis::all();
-    return Inertia::render('Kuis/Index', [
+    return Inertia::render('Kuis/index', [
         'kuis' => $kuis,
     ]);
 }

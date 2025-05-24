@@ -1,24 +1,24 @@
-import Checkbox from '@/Components/Checkbox';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
-import GuestLayout from '@/Layouts/GuestLayout';
-import { Head, Link, useForm } from '@inertiajs/react';
-import { motion } from 'framer-motion';
-import { Lock, Mail } from 'lucide-react';
+import Checkbox from "@/Components/Common/Checkbox";
+import InputError from "@/Components/InputError";
+import InputLabel from "@/Components/InputLabel";
+import PrimaryButton from "@/Components/PrimaryButton";
+import TextInput from "@/Components/TextInput";
+import GuestLayout from "@/Layouts/GuestLayout";
+import { Head, Link, useForm } from "@inertiajs/react";
+import { motion } from "framer-motion";
+import { Lock, Mail } from "lucide-react";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
-        email: '',
-        password: '',
+        email: "",
+        password: "",
         remember: false,
     });
 
     const submit = (e) => {
         e.preventDefault();
-        post(route('login'), {
-            onFinish: () => reset('password'),
+        post(route("login"), {
+            onFinish: () => reset("password"),
         });
     };
 
@@ -58,10 +58,15 @@ export default function Login({ status, canResetPassword }) {
                                     className="pl-10 w-full"
                                     autoComplete="username"
                                     isFocused={true}
-                                    onChange={(e) => setData('email', e.target.value)}
+                                    onChange={(e) =>
+                                        setData("email", e.target.value)
+                                    }
                                 />
                             </div>
-                            <InputError message={errors.email} className="mt-2" />
+                            <InputError
+                                message={errors.email}
+                                className="mt-2"
+                            />
                         </div>
 
                         <div>
@@ -77,10 +82,15 @@ export default function Login({ status, canResetPassword }) {
                                     value={data.password}
                                     className="pl-10 w-full"
                                     autoComplete="current-password"
-                                    onChange={(e) => setData('password', e.target.value)}
+                                    onChange={(e) =>
+                                        setData("password", e.target.value)
+                                    }
                                 />
                             </div>
-                            <InputError message={errors.password} className="mt-2" />
+                            <InputError
+                                message={errors.password}
+                                className="mt-2"
+                            />
                         </div>
 
                         <div className="flex items-center justify-between">
@@ -88,14 +98,18 @@ export default function Login({ status, canResetPassword }) {
                                 <Checkbox
                                     name="remember"
                                     checked={data.remember}
-                                    onChange={(e) => setData('remember', e.target.checked)}
+                                    onChange={(e) =>
+                                        setData("remember", e.target.checked)
+                                    }
                                 />
-                                <span className="ms-2 text-sm text-gray-600">Ingat saya</span>
+                                <span className="ms-2 text-sm text-gray-600">
+                                    Ingat saya
+                                </span>
                             </label>
 
                             {canResetPassword && (
                                 <Link
-                                    href={route('password.request')}
+                                    href={route("password.request")}
                                     className="text-sm text-green-600 hover:underline focus:outline-none"
                                 >
                                     Lupa password?
@@ -103,7 +117,10 @@ export default function Login({ status, canResetPassword }) {
                             )}
                         </div>
 
-                        <PrimaryButton className="w-full justify-center" disabled={processing}>
+                        <PrimaryButton
+                            className="w-full justify-center"
+                            disabled={processing}
+                        >
                             Masuk
                         </PrimaryButton>
                     </form>

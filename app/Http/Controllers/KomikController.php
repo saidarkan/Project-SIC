@@ -15,7 +15,7 @@ class KomikController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Komik/Index');
+        return Inertia::render('Guest/Komik/Index');
     }
 
     /**
