@@ -10,16 +10,19 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 
-
+// ===================
 //=== Auth routes ===
+// ===================
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
+// ===================
 //=== Guest routes ===
+// ===================
 
 // =Home route=
 Route::get('/', function () {
@@ -34,14 +37,14 @@ Route::get('/', function () {
 // =Komik route=
 Route::get('/komik', [KomikController::class, 'komikGuest'])->name('komik.guest');
 
+// =Produk route=
+Route::get('/produk', [ProdukController::class, 'produkGuest'])->name('produk.guest');
 
 
+
+// ===================
 //=== Admin routes ===
-
-
-// Route::resource('/komik', KomikController::class)->only(['index', 'create', 'store', 'edit', 'destroy', 'update']);
-
-Route::resource('/produk', ProdukController::class)->only(['index', 'create', 'store', 'edit', 'destroy', 'update']);
+// ===================
 
 Route::get('/dashboard', function () {
     return Inertia::render('Admin/Dashboard');

@@ -13,9 +13,14 @@ class ProdukController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    // public function index()
+    // {
+    //     return Inertia::render('Guest/Produk/Index');
+    // }
+
+    public function produkGuest(): Response
     {
-        return Inertia::render('Guest/Produk/Index');
+         return Inertia::render('Guest/Produk/Index');
     }
 
     /**

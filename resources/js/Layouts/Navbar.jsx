@@ -65,7 +65,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link
-                                href={route("produk.index")}
+                                href={route("produk.guest")}
                                 className={`relative flex items-center  ${
                                     currentRoute.startsWith("/produk")
                                         ? activeTextClass
