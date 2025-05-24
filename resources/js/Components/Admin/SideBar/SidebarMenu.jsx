@@ -6,14 +6,13 @@ export default function SidebarMenu() {
 
     const menus = [
         {
-            label: "Produk Gambut",
+            label: "Dashboard",
+            routeName: "dashboard",
+        },
+        {
+            label: "Produk",
             routeName: "produk.admin",
         },
-        // Tambahkan menu lainnya di sini
-        // {
-        //     label: "Pengguna",
-        //     routeName: "user.admin",
-        // },
     ];
 
     return (
@@ -24,7 +23,7 @@ export default function SidebarMenu() {
                     href={route(menu.routeName)}
                     className={`relative flex items-center px-4 py-2 rounded-md transition-colors duration-200 ${
                         route().current(menu.routeName)
-                            ? "bg-hijau text-white font-semibold"
+                            ? "bg-hijau text-black font-semibold"
                             : "text-gray-700 hover:bg-gray-100"
                     }`}
                 >
