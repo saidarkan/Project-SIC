@@ -1,11 +1,10 @@
-import InputError from "@/Components/InputError";
-import InputLabel from "@/Components/InputLabel";
-import PrimaryButton from "@/Components/PrimaryButton";
-import TextInput from "@/Components/TextInput";
+import InputError from "@/Components/Common/InputError";
+import InputLabel from "@/Components/Common/InputLabel";
+import PrimaryButton from "@/Components/Common/PrimaryButton";
+import TextInput from "@/Components/Common/TextInput";
 import GuestLayout from "@/Layouts/GuestLayout";
 import { Head, Link, useForm } from "@inertiajs/react";
-import { motion } from 'framer-motion';
-
+import { motion } from "framer-motion";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({

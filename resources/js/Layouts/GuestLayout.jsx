@@ -1,4 +1,4 @@
-import ApplicationLogo from "@/Components/ApplicationLogo";
+import ApplicationLogo from "@/Components/Common/ApplicationLogo";
 import { Link } from "@inertiajs/react";
 import Navbar from "@/Layouts/Navbar";
 import Footer from "@/Layouts/Footer";

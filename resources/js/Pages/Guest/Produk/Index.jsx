@@ -2,8 +2,8 @@ import React, { useRef } from "react";
 import { Head } from "@inertiajs/react";
 import GuestLayout from "@/Layouts/GuestLayout";
 import ScrollButtons from "@/Components/Guest/Home/ScrollButtons";
-import Carousel from "@/Components/Produk/Carousel";
-import ProdukCard from "@/Components/Produk/ProdukCard";
+import Carousel from "@/Components/Guest/Produk/Carousel";
+import ProdukCard from "@/Components/Guest/Produk/ProdukCard";
 
 const Index = () => {
     const bottomRef = useRef(null);
