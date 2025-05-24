@@ -50,6 +50,13 @@ Route::get('/dashboard', function () {
     return Inertia::render('Admin/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::prefix('admin')->group(function () {
+    // =Produk route=
+    Route::get('/produk', [ProdukController::class, 'produkAdmin'])->name('produk.admin');
+});
+
+
+
 Route::get('/kuis', [KuisController::class, 'index'])->name('kuis.index');
 Route::get('/kuis/create', [KuisController::class, 'create'])->name('kuis.create');
 Route::post('/kuis', [KuisController::class, 'store'])->name('kuis.store');
