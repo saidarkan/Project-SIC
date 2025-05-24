@@ -50,7 +50,7 @@ Route::get('/dashboard', function () {
     return Inertia::render('Admin/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::prefix('admin')->group(function () {
+Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     // =Produk route=
     Route::get('/produk', [ProdukController::class, 'produkAdmin'])->name('produk.admin');
     // =Komik route=
@@ -64,14 +64,5 @@ Route::prefix('admin')->group(function () {
     Route::delete('/kuis/{id}', [KuisController::class, 'destroy'])->name('kuis.destroy');
 
 });
-
-
-
-// Route::get('/kuis', [KuisController::class, 'index'])->name('kuis.index');
-// Route::get('/kuis/create', [KuisController::class, 'create'])->name('kuis.create');
-// Route::post('/kuis', [KuisController::class, 'store'])->name('kuis.store');
-// Route::get('/kuis/{id}/edit', [KuisController::class, 'edit'])->name('kuis.edit');
-// Route::put('/kuis/{id}', [KuisController::class, 'update'])->name('kuis.update');
-// Route::delete('/kuis/{id}', [KuisController::class, 'destroy'])->name('kuis.destroy');
 
 require __DIR__ . '/auth.php';
