@@ -17,6 +17,10 @@ export default function SidebarMenu() {
             label: "Produk",
             routeName: "produk.admin",
         },
+        {
+            label: "Kuis",
+            routeName: "kuis.admin",
+        },
 
     ];
 
