@@ -1,7 +1,7 @@
 import ApplicationLogo from "@/Components/Common/ApplicationLogo";
 import { Link } from "@inertiajs/react";
-import Navbar from "@/Layouts/Navbar";
-import Footer from "@/Layouts/Footer";
+import Navbar from "@/Components/Guest/Layouts/Navbar";
+import Footer from "@/Components/Guest/Layouts/Footer";
 
 export default function GuestLayout({ children }) {
     return (

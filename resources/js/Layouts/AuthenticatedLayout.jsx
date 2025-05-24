@@ -7,7 +7,7 @@ export default function AuthenticatedLayout({ children }) {
             <div className="flex flex-row flex-1">
                 <Sidebar />
                 <div className="flex-1 p-4">
-                    <Header /> {/* Tidak perlu kirim props user lagi */}
+                    <Header />
                     <main>{children}</main>
                 </div>
             </div>
