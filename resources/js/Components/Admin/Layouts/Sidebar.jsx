@@ -1,5 +1,3 @@
-import { Link} from "@inertiajs/react";
-import { route } from "ziggy-js";
 import SidebarMenu from "../SideBar/SidebarMenu";
 
 
@@ -25,17 +23,15 @@ export default function Sidebar() {
                 </span>
             </div>
 
+
+
+
+
             {/* List Menu */}
             <div id="sidebar-menu" className="mt-10">
-                {/* <SidebarMenu /> */}
-
-                <Link
-                    href={route("produk.admin")}
-                    className={`relative flex items-center  `}
-                >
-                    Produk Gambut
-                </Link>
+                <SidebarMenu />
             </div>
+
 
             {/* Footer */}
             <div id="sidebar-footer" className="mt-auto">
@@ -64,7 +60,7 @@ export default function Sidebar() {
                     id="footer-copyright"
                     className="text-sm font-light text-gray-400"
                 >
-                    &copy; 2025 All Right Reserved
+                    &copy; Gatty 2025 All Right Reserved
                 </p>
             </div>
         </div>
