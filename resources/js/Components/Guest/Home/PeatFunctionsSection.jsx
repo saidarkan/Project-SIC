@@ -26,35 +26,57 @@ const PeatFunctionsSection = React.forwardRef((props, ref) => {
                 >
                     {/* Fungsi 1 */}
                     <div className="bg-white rounded-xl shadow-md p-6 border border-lime-300 hover:shadow-lg transition">
-                        <h3 className="text-xl font-semibold mb-2">
-                            🌍 Menyerap Karbon
-                        </h3>
-                        <p>
-                            Lahan gambut menyimpan karbon dalam jumlah besar,
-                            membantu mengurangi efek perubahan iklim.
-                        </p>
+                        <img
+                            src="/build/images/Fungsi-Gambut/1.png"
+                            alt="gambar1"
+                            className="rounded-xl"
+                        />
+                        <div className="mt-3">
+                            <h3 className="text-xl font-semibold mb-2">
+                                🌍 Menyerap Karbon
+                            </h3>
+                            <p>
+                                Lahan gambut menyimpan karbon dalam jumlah
+                                besar, membantu mengurangi efek perubahan iklim.
+                            </p>
+                        </div>
                     </div>
 
                     {/* Fungsi 2 */}
                     <div className="bg-white rounded-xl shadow-md p-6 border border-lime-300 hover:shadow-lg transition">
-                        <h3 className="text-xl font-semibold mb-2">
-                            💧 Menjaga Air Tanah
-                        </h3>
-                        <p>
-                            Struktur gambut seperti spons menyerap dan menyimpan
-                            air, membantu mencegah banjir dan kekeringan.
-                        </p>
+                        <img
+                            src="/build/images/Fungsi-Gambut/2.png"
+                            alt="gambar1"
+                            className="rounded-xl"
+                        />
+                        <div className="mt-3">
+                            <h3 className="text-xl font-semibold mb-2">
+                                💧 Menjaga Air Tanah
+                            </h3>
+                            <p>
+                                Struktur gambut seperti spons menyerap dan
+                                menyimpan air, membantu mencegah banjir dan
+                                kekeringan.
+                            </p>
+                        </div>
                     </div>
 
                     {/* Fungsi 3 */}
                     <div className="bg-white rounded-xl shadow-md p-6 border border-lime-300 hover:shadow-lg transition">
-                        <h3 className="text-xl font-semibold mb-2">
-                            🐦 Habitat Satwa
-                        </h3>
-                        <p>
-                            Menjadi rumah bagi flora dan fauna unik yang tidak
-                            ditemukan di ekosistem lain.
-                        </p>
+                        <img
+                            src="/build/images/Fungsi-Gambut/3.png"
+                            alt="gambar1"
+                            className="rounded-xl"
+                        />
+                        <div className="mt-3">
+                            <h3 className="text-xl font-semibold mb-2">
+                                🐦 Habitat Satwa
+                            </h3>
+                            <p>
+                                Menjadi rumah bagi flora dan fauna unik yang
+                                tidak ditemukan di ekosistem lain.
+                            </p>
+                        </div>
                     </div>
                 </motion.div>
 
