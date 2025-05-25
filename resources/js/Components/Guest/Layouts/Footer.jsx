@@ -111,7 +111,7 @@ const Footer = () => {
 
             {/* Copyright */}
             <div className="mt-10 border-t border-lime-700 pt-4 text-center text-sm text-lime-300">
-                © {new Date().getFullYear()} Peatland Hero. Semua Hak Dilindungi
+                © {new Date().getFullYear()} GATY. Semua Hak Dilindungi
                 🌱
             </div>
         </footer>

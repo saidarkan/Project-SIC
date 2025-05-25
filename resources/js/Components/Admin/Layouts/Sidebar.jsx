@@ -94,7 +94,7 @@ function SidebarContent() {
                     </div>
                 </div>
                 <p className="text-sm font-light text-gray-300 mt-4 text-center">
-                    &copy; Gatty 2025 All Rights Reserved
+                    &copy; GATY 2025 All Rights Reserved
                 </p>
             </div>
         </>
