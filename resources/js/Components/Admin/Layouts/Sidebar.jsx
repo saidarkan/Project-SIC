@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Sidebar({ isOpen, onClose }) {
-     const sidebarVariants = {
+    const sidebarVariants = {
         open: { x: 0 },
         closed: { x: "-100%" },
     };
@@ -25,7 +25,6 @@ export default function Sidebar({ isOpen, onClose }) {
                     />
                 )}
             </AnimatePresence>
-
 
             {/* Sidebar mobile */}
             <AnimatePresence>
@@ -65,8 +64,12 @@ function SidebarContent() {
     return (
         <>
             <div className="flex flex-col items-start space-y-1">
-                <span className="text-3xl font-extrabold tracking-tight">Peatland Hero</span>
-                <span className="text-sm font-light text-lime-200">Your environmental ally</span>
+                <span className="text-3xl font-extrabold tracking-tight">
+                    Peatland Hero
+                </span>
+                <span className="text-sm font-light text-lime-200">
+                    Admin Dashboard
+                </span>
             </div>
 
             <div className="mt-10 flex-grow">
@@ -81,7 +84,10 @@ function SidebarContent() {
                         className="w-16 h-16 rounded-full object-cover border-2 border-lime-600"
                     />
                     <div className="text-black text-sm flex flex-col">
-                        <span> Please organize your menus through button below! </span>
+                        <span>
+                            {" "}
+                            Please organize your menus through button below!{" "}
+                        </span>
                         <button className="flex justify-center items-center mt-3 bg-lime-100 text-hijau px-3 py-1 rounded-md hover:bg-lime-200 transition">
                             + Add Menu
                         </button>
