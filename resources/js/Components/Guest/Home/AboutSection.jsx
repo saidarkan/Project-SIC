@@ -159,8 +159,8 @@ const AboutSection = React.forwardRef((props) => {
                     {/* Gambar */}
                     <div className="flex-shrink-0">
                         <img
-                            src="/build/images/tanah-gambut.jpg"
-                            alt="Tanah Gambut"
+                            src="/build/images/lahan-gambut.png"
+                            alt="Lahan Gambut"
                             className="w-80 h-80 md:w-96 md:h-96 rounded-xl object-cover border-4 border-white shadow-md"
                         />
                     </div>
