@@ -40,6 +40,9 @@ Route::get('/komik', [KomikController::class, 'komikGuest'])->name('komik.guest'
 // =Produk route=
 Route::get('/produk', [ProdukController::class, 'produkGuest'])->name('produk.guest');
 
+// =Kuis route=
+Route::get('/kuis', [ProdukController::class, 'kuisGuest'])->name('kuis.guest');
+
 
 
 // ===================
@@ -53,6 +56,14 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     // =Produk route=
     Route::get('/produk', [ProdukController::class, 'produkAdmin'])->name('produk.admin');
+    Route::get('/produk/create', [ProdukController::class, 'create'])->name('produk.create');
+    Route::post('/produk', [ProdukController::class, 'store'])->name('produk.store');
+    Route::get('/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk.edit');
+    // Route::put('/produk/{id}', [ProdukController::class, 'update'])->name('produk.update');
+    Route::post('/produk/{id}', [ProdukController::class, 'update'])->name('produk.update');
+
+    Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');
+
     // =Komik route=
     Route::get('/komik', [KomikController::class, 'KomikAdmin'])->name('komik.admin');
     // =Kuis route=
