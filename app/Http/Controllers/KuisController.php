@@ -33,7 +33,7 @@ class KuisController extends Controller
         $komiks = Komik::all();  // Ambil semua komik dari database
 
         // Kirimkan komik ke view
-        return inertia('Kuis/Create', [
+        return inertia('Admin/Kuis/Create', [
             'komiks' => $komiks,
         ]);
     }
@@ -43,13 +43,13 @@ class KuisController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_komik' => 'required|exists:komiks,id_komik',
-            'pertanyaan' => 'required|string|max:255',
-            'opsi_a' => 'required|string|max:255',
-            'opsi_b' => 'required|string|max:255',
-            'opsi_c' => 'required|string|max:255',
-            'opsi_d' => 'required|string|max:255',
-            'jawaban' => 'required|string|max:255',
+            'id_komik' => 'exists:komiks,id_komik',
+            'pertanyaan' => 'string|max:255',
+            'opsi_a' => 'string|max:255',
+            'opsi_b' => 'string|max:255',
+            'opsi_c' => 'string|max:255',
+            'opsi_d' => 'string|max:255',
+            'jawaban' => 'string|max:255',
         ]);
 
         // Simpan kuis
@@ -63,7 +63,7 @@ class KuisController extends Controller
             'jawaban' => $request->jawaban,
         ]);
 
-        return redirect()->route('kuis.index');
+        return redirect()->route('kuis.admin');
     }
 
 
@@ -72,7 +72,7 @@ class KuisController extends Controller
     public function edit($id)
     {
         $kuis = Kuis::findOrFail($id);
-        return Inertia::render('Kuis/Edit', [
+        return Inertia::render('Admin/Kuis/Edit', [
             'kuis' => $kuis
         ]);
     }
@@ -100,7 +100,7 @@ class KuisController extends Controller
             'jawaban'
         ]));
 
-        return redirect()->route('kuis.index')->with('success', 'Kuis berhasil diperbarui');
+        return redirect()->route('kuis.admin')->with('success', 'Kuis berhasil diperbarui');
     }
 
 
@@ -110,7 +110,7 @@ class KuisController extends Controller
 
         $kuis->delete();
 
-        return redirect()->route('kuis.index')->with('success', 'Kuis berhasil dihapus');
+        return redirect()->route('kuis.admin')->with('success', 'Kuis berhasil dihapus');
     }
 
 

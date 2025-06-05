@@ -1,4 +1,5 @@
 import { useForm } from '@inertiajs/react';
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 
 export default function Create({ komiks }) {
     const { data, setData, post, processing, errors } = useForm({
@@ -17,6 +18,7 @@ export default function Create({ komiks }) {
     };
 
     return (
+        <AuthenticatedLayout>
         <div className="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-6">
             <h1 className="text-2xl font-bold mb-6 text-center">Buat Kuis Baru</h1>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -112,5 +114,6 @@ export default function Create({ komiks }) {
                 </button>
             </form>
         </div>
+        </AuthenticatedLayout>
     );
 }
