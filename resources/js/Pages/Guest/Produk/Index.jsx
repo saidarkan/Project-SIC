@@ -5,7 +5,7 @@ import ScrollButtons from "@/Components/Guest/Home/ScrollButtons";
 import Carousel from "@/Components/Guest/Produk/Carousel";
 import ProdukCard from "@/Components/Guest/Produk/ProdukCard";
 
-const Index = () => {
+const Index = ({ produks }) => {
     const bottomRef = useRef(null);
 
     const scrollToTop = () => {
@@ -25,10 +25,11 @@ const Index = () => {
 
                 <div ref={bottomRef} className="mt-10"></div>
 
-                <ProdukCard />
+                <ProdukCard produks={produks} />
             </div>
         </GuestLayout>
     );
 };
+
 
 export default Index;

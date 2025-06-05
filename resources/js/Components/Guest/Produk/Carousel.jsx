@@ -43,21 +43,21 @@ const Carousel = () => {
                 >
                     <SwiperSlide className="flex items-center justify-center text-white">
                         <img
-                            src="/build/images/Product-Carousel/1.png"
+                            src="/build/images/Product-Carousel/8.png"
                             alt="gambar"
                             className="object-cover w-full h-full"
                         />
                     </SwiperSlide>
                     <SwiperSlide className="flex items-center justify-center text-white">
                         <img
-                            src="/build/images/Product-Carousel/2.png"
+                            src="/build/images/Product-Carousel/9.png"
                             alt="gambar"
                             className="object-cover w-full h-full"
                         />
                     </SwiperSlide>
                     <SwiperSlide className="flex items-center justify-center text-white">
                         <img
-                            src="/build/images/Product-Carousel/3.png"
+                            src="/build/images/Product-Carousel/10.png"
                             alt="gambar"
                             className="object-cover w-full h-full"
                         />
